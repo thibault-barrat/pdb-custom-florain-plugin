@@ -43,7 +43,7 @@ function florain_set_marches_dropdown_options ( $field )
   $query = '
     SELECT titre 
     FROM `' . $wpdb->prefix . 'participants_database` 
-    WHERE categorie = 'Marchés'
+    WHERE categorie = "Marchés"
   ';
   
   // now execute the query and get the results
@@ -55,7 +55,7 @@ function florain_set_marches_dropdown_options ( $field )
    */
   $options = array();
   foreach ( $raw_names as $record ) {
-    $options[] = $record->first_name . ' ' . $record->last_name;
+    $options[] = $record->titre;
   }
   
   // now set the field object with the new options list
